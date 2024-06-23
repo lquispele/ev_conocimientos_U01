@@ -3,14 +3,18 @@ using namespace std;
 float suma(int);
 int factorial(int);
 int main(){
-    int n;
+    int n,i=1;
     float sum;
     do{
     cout<<"Ingresar la cantidad de datos de la suma: ";
     cin>>n; //se elimino el "endl", no es para el cin
+    if(n<0){
+      i++;  
+    } else{
     sum=suma(n);
     cout<<"La suma de la sumatoria es: "<<sum<<endl;
-    }while(n>0);
+    }
+    }while(i<=3);
 }
 float suma(int a){
     float s=0;
