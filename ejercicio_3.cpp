@@ -5,10 +5,12 @@ int factorial(int);
 int main(){
     int n;
     float sum;
-    cout<<"Ingresar la cantidad de datos de la suma: "
-    cin>>n>>endl;
+    do{
+    cout<<"Ingresar la cantidad de datos de la suma: ";
+    cin>>n; //se elimino el "endl", no es para el cin
     sum=suma(n);
-    cout<<"La suma de la sumatoria es:"<<sum;
+    cout<<"La suma de la sumatoria es: "<<sum<<endl;
+    }while(n>0);
 }
 float suma(int a){
     float s=0;
