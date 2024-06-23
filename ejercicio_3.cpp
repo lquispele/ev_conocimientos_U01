@@ -1,21 +1,17 @@
 #include<iostream>
 #include<unistd.h>
 using namespace std;
-float suma(int);
+void suma(int);
 int factorial(int);
 int main(){
     int n,i=0;
-    float sum;
     do{
     cout<<"Ingresar la cantidad de datos de la suma: ";
     cin>>n; //se elimino el "endl", no es para el cin
     if(n<0){
       i++;  
     } else{
-    sum=suma(n);
-    cout<<"La suma de la sumatoria es: "<<sum<<endl;
-    sleep(2);
-    system("clear");
+    suma(n);
     }
     }while(i<3);
         if (i==3){
@@ -27,17 +23,21 @@ int main(){
     }
 }
 
-float suma(int a){
+void suma(int a){
     float s=0;
     for(int i=1;i<=a;i++){
         s=s+(float(factorial(i))/(2*i));
     }
-    return s;
+    cout<<"La suma de la sumatoria es: "<<s<<endl;
+    sleep(2);
+    system("clear");
 }
 int factorial(int b){
     int f=1;
-    for(int i=2;i<=b;i++){
-        f=f*i;
+    if(b==1){
+     f=1 ;  
+    }else{
+        f=b*factorial(b-1);
     }
     return f;
 }
