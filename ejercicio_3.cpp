@@ -1,6 +1,7 @@
 #include<iostream>
 #include<unistd.h>
 using namespace std;
+void Error();
 void suma(int);
 int factorial(int);
 int main(){
@@ -15,14 +16,16 @@ int main(){
     }
     }while(i<3);
         if (i==3){
-        system("clear");
-        cout<<"Por favor espere 5 segundos. \n";
-        sleep(5);
-        system("clear");
-        cout<<"Se bloqueo su acceso. Gracias"<<endl;
+            Error();
     }
 }
-
+void Error(){
+    system("clear");
+    cout<<"Por favor espere 5 segundos. \n";
+    sleep(5);
+    system("clear");
+    cout<<"Se bloqueo su acceso. Gracias"<<endl;
+}
 void suma(int a){
     float s=0;
     for(int i=1;i<=a;i++){
