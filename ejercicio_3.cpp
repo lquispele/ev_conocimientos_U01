@@ -1,9 +1,10 @@
 #include<iostream>
+#include<unistd.h>
 using namespace std;
 float suma(int);
 int factorial(int);
 int main(){
-    int n,i=1;
+    int n,i=0;
     float sum;
     do{
     cout<<"Ingresar la cantidad de datos de la suma: ";
@@ -13,9 +14,19 @@ int main(){
     } else{
     sum=suma(n);
     cout<<"La suma de la sumatoria es: "<<sum<<endl;
+    sleep(2);
+    system("clear");
     }
-    }while(i<=3);
+    }while(i<3);
+        if (i==3){
+        system("clear");
+        cout<<"Por favor espere 5 segundos. \n";
+        sleep(5);
+        system("clear");
+        cout<<"Se bloqueo su acceso. Gracias"<<endl;
+    }
 }
+
 float suma(int a){
     float s=0;
     for(int i=1;i<=a;i++){
