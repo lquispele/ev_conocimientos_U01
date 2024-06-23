@@ -7,8 +7,10 @@ int main(){
         cout<<"Ingrese lo numeros que van a ser comparados: \n";
         cin>>n1;    //el primer numero
         cin>>n2;    // el segundo numero
+        if(n1==0||n2==0){
+            cout<<"No tiene solucion. Por favor ingrese de nuevo los datos";
+        }
         cout<<"Los divisores comunes de "<<n1<<" y "<<n2<<" : ";
-
     while(i<=n1&&i<=n2){
         if(n1%i==0&&n2%i==0){
             if(n1==i){
@@ -28,5 +30,5 @@ int main(){
     }
     sleep(5);
     system("clear");
-    }while (n1>0&&n2>0);
+    }while (n1>=0&&n2>=0);
 }
